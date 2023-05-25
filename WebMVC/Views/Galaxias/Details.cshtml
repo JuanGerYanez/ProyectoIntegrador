@@ -1,0 +1,36 @@
+﻿@model Biblioteca_De_Clases.galaxia
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>galaxia</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.codigo_galaxia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.codigo_galaxia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre_galaxia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre_galaxia)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.edad_millones_años_galaxia)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.edad_millones_años_galaxia)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigo_galaxia }) |
+    <a asp-action="Index">Back to List</a>
+</div>

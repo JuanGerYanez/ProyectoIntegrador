@@ -1,0 +1,60 @@
+﻿@model Biblioteca_De_Clases.planeta
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>planeta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="codigo_planeta" class="control-label"></label>
+                <input asp-for="codigo_planeta" class="form-control" />
+                <span asp-validation-for="codigo_planeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nombre_planeta" class="control-label"></label>
+                <input asp-for="nombre_planeta" class="form-control" />
+                <span asp-validation-for="nombre_planeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="volumen_planeta" class="control-label"></label>
+                <input asp-for="volumen_planeta" class="form-control" />
+                <span asp-validation-for="volumen_planeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="densidad_planeta" class="control-label"></label>
+                <input asp-for="densidad_planeta" class="form-control" />
+                <span asp-validation-for="densidad_planeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="edad_años_planeta" class="control-label"></label>
+                <input asp-for="edad_años_planeta" class="form-control" />
+                <span asp-validation-for="edad_años_planeta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="galaxia_planetacodigo_galaxia" class="control-label"></label>
+                <select asp-for="galaxia_planetacodigo_galaxia" asp-items="@ViewBag.galaxias">
+                    <option selected="selected" value="">&nbsp;&nbsp;&nbsp;Elija una galaxia&nbsp;&nbsp;&nbsp;</option>
+                </select>
+                <span asp-validation-for="galaxia_planetacodigo_galaxia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Biblioteca_De_Clases.galaxia>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo_galaxia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_galaxia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edad_millones_años_galaxia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_galaxia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_galaxia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad_millones_años_galaxia)  
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.codigo_galaxia }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.codigo_galaxia }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.codigo_galaxia })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

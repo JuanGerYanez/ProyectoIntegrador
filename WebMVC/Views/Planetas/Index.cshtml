@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Biblioteca_De_Clases.planeta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo_planeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_planeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.volumen_planeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.densidad_planeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edad_años_planeta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.galaxia_planetacodigo_galaxia)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_planeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_planeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.volumen_planeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.densidad_planeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad_años_planeta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.galaxia_planetacodigo_galaxia)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.codigo_planeta }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.codigo_planeta }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.codigo_planeta })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

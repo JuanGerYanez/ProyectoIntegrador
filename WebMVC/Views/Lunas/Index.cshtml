@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Biblioteca_De_Clases.luna>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codigo_luna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre_luna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.distancia_km_planeta_luna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edad_años_luna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.planeta_lunacodigo_planeta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codigo_luna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre_luna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.distancia_km_planeta_luna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.edad_años_luna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.planeta_lunacodigo_planeta)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.codigo_luna }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.codigo_luna }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.codigo_luna })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
